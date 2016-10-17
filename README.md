@@ -20,19 +20,19 @@
  * temporal_average 
 * Image Alignment
  * Simple transformations
-  * transImage - simple translation
-  * rotateImage - rotation
-  * diamondImage - combined rotation and translation
+   * transImage - simple translation
+   * rotateImage - rotation
+   * diamondImage - combined rotation and translation
  * Homography Matrix
-  * trans
-  * rotate
-  * scale
-  * warp
-  * rotateAroundCenter
+   * trans
+   * rotate
+   * scale
+   * warp
+   * rotateAroundCenter
  * Estimation of homography matrices
-  * estimateTRZ
-  * estimateAffine
-  * estimateProj
+   * estimateTRZ
+   * estimateAffine
+   * estimateProj
 
 ## Submitting an exercise
 Use the submit script, like the following: `submit file_name`
