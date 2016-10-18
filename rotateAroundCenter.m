@@ -1,7 +1,5 @@
-function H = rotate(theta, w, h)
-    theta = theta/180*pi;
-    H = eye(3);
+function [Out] = rotateAroundCenter(I1, angle)
 
-    %% napisati matricu homografije koja rotira sliku za ugao theta oko centra slike
+    %% Koristeci funkcije rotate i trans rotirati sliku oko centra (h/2, w/2) za `angle` stepeni
 
-end
+endfunction
