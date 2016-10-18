@@ -1,6 +1,5 @@
 function [H] = estimateTRZ (p1, p2)
-
-    %% Napisati funkciju koja ce iz 2 para korespondencija
-    %% izracunati TRZ matricu homografije
   
+    %% Napisati funkciju koja estimira TRZ homografiju iz 2 para tacaka korespondencije 
+
 endfunction

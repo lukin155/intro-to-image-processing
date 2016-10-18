@@ -1,6 +1,5 @@
 function [H] = estimateAffine(p1, p2)
   
-    %% Napisati funkciju koja iz 3 para tacaka korespondencije
-    %% racuna afinu matricu homografije
-
+  %% napisati funkciju koja estimira afinu homografiju iz 3 para tacaka korespondencije
+  
 endfunction
