@@ -47,3 +47,9 @@ s(~v) = 0;
 
 % --- YOUR CODE HERE --- %
 
+
+%% Display the components
+figure('Name', 'H-component'), imshow(h)
+figure('Name', 'S-component'), imshow(s)
+figure('Name', 'V-component'), imshow(v)
+endfunction
