@@ -15,9 +15,7 @@
  * linear_filtering
  * gaussian_blur
  * sobel_edge_detection
- * median_filter
-* Multi-frame
- * temporal_average 
+ * median_filter 
 * Image Alignment
  * Simple transformations
    * transImage - simple translation
