@@ -46,7 +46,7 @@ assert(num_outputs == numel(candidate_outputs),
 correct_num_outputs = 3 == nargout;
 
 for ii = 1 : num_outputs
-  missmatches = (candidate_outputs{ii} - exp_outputs{ii}) > epsilon;
+  missmatches = abs(candidate_outputs{ii} - exp_outputs{ii}) > epsilon;
   s = sum(missmatches(:));
   if (0 == s)
     fprintf('Success!\n');
