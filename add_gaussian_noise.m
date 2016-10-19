@@ -13,6 +13,11 @@ endif
 assert(strcmp(class(in), 'double') || strcmp(class(in), 'single'),
   'Invalid input type. Input must be single or double.');
 
+
+%% Reset random generator
+randn('seed', 0);
+randn('state', 0);
+
 %% Add noise
 
 % --- YOUR CODE HERE --- %
