@@ -17,11 +17,7 @@ assert(length(kernel_size) == 2,
 
 % --- YOUR CODE HERE --- %
 
-
-%% Add impulse noise to input Y
-y_noisy = imnoise(y_in, 'salt & pepper');
-
-%% Pad noisy luma with zeros
+%% Pad input luma with zeros
 
 % --- YOUR CODE HERE --- %
 
@@ -34,7 +30,6 @@ y_noisy = imnoise(y_in, 'salt & pepper');
 
 %% Show some images
 figure('Name', 'Input luma'), imshow(y_in)
-figure('Name', 'Noisy luma'), imshow(y_noisy)
 figure('Name', 'De-noised luma'), imshow(y_out)
 
 endfunction
