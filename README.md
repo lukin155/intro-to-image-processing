@@ -21,13 +21,13 @@
     * transImage - simple translation
     * rotateImage - rotation
     * diamondImage - combined rotation and translation
- * Homography Matrix
+  * Homography Matrix
     * trans
     * rotate
     * scale
     * warp
     * rotateAroundCenter
- * Estimation of homography matrices
+  * Estimation of homography matrices
     * estimateTRZ
     * estimateAffine
     * estimateProj
