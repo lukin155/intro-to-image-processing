@@ -3,29 +3,23 @@ function rgb = yuv2rgb(yuv)
 %
 % Input must be a floating point type
 
-
 %% Input validation
 assert(strcmp(class(yuv), 'double') || strcmp(class(rgb), 'single'),
   'Invalid input type. Input must be single or double.');
-
 
 %% Extract RGB components
 Y = yuv(:,:,1);
 U = yuv(:,:,2);
 V = yuv(:,:,3);
 
-%% Calculate R plane
+%% Calculate R plane 
+%% ------- YOUR CODE HERE ------
 
-% --- YOUR CODE HERE --- %
+%% Calculate G plane 
+%% ------- YOUR CODE HERE ------
 
-%% Calculate G plane
-
-% --- YOUR CODE HERE --- %
-
-%% Calculate B plane
-
-% --- YOUR CODE HERE --- %
-
+%% Calculate B plane 
+%% ------- YOUR CODE HERE ------
 
 %% Concat output planes
 rgb = cat(3, R, G, B);

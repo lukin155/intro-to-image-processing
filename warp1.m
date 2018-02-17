@@ -6,10 +6,8 @@ function outImage = warp1 (image, h)
   for i=1:outSize(1);
    for j=1:outSize(2);
 
-      % % Napisi funkciju koja mapira koordinate ulazne slike na koordinate izlazne slike
-      %% koristeci matricu homografije h
+%% Napisi funkciju koja mapira koordinate ulazne slike na koordinate izlazne slike 
+%% ------- YOUR CODE HERE ------
 
-    endfor
-  endfor
-
+% koristeci matricu homografije h
 endfunction

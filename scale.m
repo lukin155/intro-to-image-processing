@@ -1,6 +1,8 @@
 function H = scale(s)
+
     H = eye(3);
 
-    %% napisati matricu homografije koja izotropno skalira faktorom s
+%% Napisi matricu homografije koja skalira faktorom s 
+%% ------- YOUR CODE HERE ------
 
 end

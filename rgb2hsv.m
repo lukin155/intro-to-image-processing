@@ -3,21 +3,17 @@ function hsv = rgb2hsv(rgb)
 %
 % Input must be a floating point type between 0 and 1
 
-
 %% Input validation
 assert(strcmp(class(rgb), 'double') || strcmp(class(rgb), 'single'),
   'Invalid input type. Input must be single or double.');
 assert(max(rgb(:)) <= 1.0 && max(rgb(:)) >= 0.0,
   'Expected input range [0, 1]');
 
-%% Extract RGB components
+%% Extract RGB components 
+%% ------- YOUR CODE HERE ------
 
-% --- YOUR CODE HERE --- %
-
-%% Calculate V plane
-
-% --- YOUR CODE HERE --- %
-
+%% Calculate V plane 
+%% ------- YOUR CODE HERE ------
 
 %% Calculate H and S planes
 h = zeros(size(v));
@@ -43,10 +39,8 @@ s(k) = tmp(k);
 s(~v) = 0;
 
 
-%% Concat output planes
-
-% --- YOUR CODE HERE --- %
-
+%% Concat output planes 
+%% ------- YOUR CODE HERE ------
 
 %% Display the components
 figure('Name', 'H-component'), imshow(h)

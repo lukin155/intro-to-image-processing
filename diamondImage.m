@@ -7,11 +7,11 @@ function outImage = diamondImage(inImage, theta)
     
     for y2=1:h;
         for x2=1:w;
-       
-        %% -- napisi kod ovde -- %%
-        %% za svaki piksel iz izlazne slike preracunati
-        %% koordinatu piksela ulazne slike x1 = f(x2)
         
+%% Za sve koordinate x2,y2 nadji koordinate ulazne slike 
+%% ------- YOUR CODE HERE ------
+
+          
         endfor
     endfor
 endfunction

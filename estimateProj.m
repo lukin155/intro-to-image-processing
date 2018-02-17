@@ -1,7 +1,7 @@
 function [H] = estimateProj(p1, p2)
-
+  %% izracunava projektivnu homografiju iz tacaka korespondencije p1 i p2
   
-  %% prebaci tacke u homogene koordinate
+%% prebaci tacke u homogene koordinate
   cols = size(p1,1);
   p1 = cat(2, p1, ones(cols, 1));
   p2 = cat(2, p2, ones(cols, 1));
@@ -10,6 +10,16 @@ function [H] = estimateProj(p1, p2)
   y1 = p1(:, 2);
   w1 = p1(:, 3);
   
-  %% napisati funkciju koja racuna projektivnu homografiju iz 4 para tacaka korespondencije p1 i p2
+%% Postavi sistem jednacina 
+%% ------- YOUR CODE HERE ------
+
+%% Nadji nula prostor 
+%% ------- YOUR CODE HERE ------
+
+%% Popuni H matricu 
+%% ------- YOUR CODE HERE ------
+
+%% Normalizacija matrice
+  H = H/H(3,3);
   
 endfunction

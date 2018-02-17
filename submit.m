@@ -5,12 +5,11 @@ function [in, expected, actual] = submit(function_name, epsilon)
 % funtion being checked.
 %
 % NOTE: This function expects a path to a file - relative or absolute.
-
-assert(nargin == 1, "Wrong number of input arguments.")
+assert(nargin ~= 0, "Wrong number of input arguments.")
 narginchk(1,2);
 
 if nargin < 2
-  epsilon = 0;
+  epsilon = 1e-8;
 endif
 
 [fpath, fname, fext] = fileparts(function_name);

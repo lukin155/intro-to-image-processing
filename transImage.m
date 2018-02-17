@@ -6,11 +6,9 @@ function outImage = transImage(inImage, t)
     
     for y2=1:h;
         for x2=1:w;
-         
-            %% -- napisi kod ovde -- %%
-            %% za svaki piksel iz izlazne slike preracunati
-            %% koordinatu piksela ulazne slike x1 = f(x2)
+          x1 = x2 - t(1);
+          y1 = y2 - t(2);
+          
+%% 
+%% ------- YOUR CODE HERE ------
 
-        endfor
-    endfor
-endfunction
