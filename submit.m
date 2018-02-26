@@ -52,7 +52,7 @@ for ii = 1 : num_outputs
   else
     fprintf('Outputs mismatch.\n');
     if ~correct_num_outputs
-      fprintf('Call the script like this to get the epected and actual outputs:\n');
+      fprintf('Call the script like this to get the expected and actual outputs:\n');
       fprintf('[input, expected, actual] = submit(file_name);\n');
     endif
   endif
