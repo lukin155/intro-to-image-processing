@@ -12,3 +12,6 @@ function outImage = transImage(inImage, t)
 %% 
 %% ------- YOUR CODE HERE ------
 
+        endfor
+    endfor
+endfunction
