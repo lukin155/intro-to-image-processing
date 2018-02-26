@@ -9,7 +9,7 @@ assert(length(size(mat)) == 2,
 mat = im2uint8(mat);
 
 %% Initialize output vector
-max_num = intmax('uint8'); % this is safe because of the above conversion
+max_num = int32(intmax('uint8')); % this is safe because of the above conversion
 h = zeros(1, max_num + 1);
   
 %% Calculate histogram 
