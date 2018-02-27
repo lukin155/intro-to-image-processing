@@ -21,9 +21,9 @@ cd(fpath)
 
 % Files validation
 
-results = glob(sprintf('%s.*.result.mat', fname));
+results = glob(sprintf('tests/%s.*.result.mat', fname));
 
-assert(size(results, 1) > 0, sprintf('a matching %s.<N>.result.mat file not found in the same folder where function is located', fname));
+assert(size(results, 1) > 0, sprintf('a matching %s.<N>.result.mat file not found in tests/ subfolder where function is located', fname));
 
 total_result = true;
 
@@ -75,6 +75,7 @@ for N=1:size(results,1);
       in = inputs;
     endif
 endfor
+
 
 if total_result
     fprintf('--- ALL TESTS SUCCESSFUL ---\n');
