@@ -1,4 +1,4 @@
-function [in, expected, actual] = submit(function_name, epsilon)
+function [in, expected, actual] = submit(function_name)
 % Perform a test to see if the given function generates the right outputs for
 % the given input. Inputs and outputs are predefined in a .mat file that is
 % located in the same folder and has the same name (except the extension) as the
@@ -7,10 +7,6 @@ function [in, expected, actual] = submit(function_name, epsilon)
 % NOTE: This function expects a path to a file - relative or absolute.
 assert(nargin ~= 0, "Wrong number of input arguments.")
 narginchk(1,2);
-
-if nargin < 2
-  epsilon = 1e-8;
-endif
 
 [fpath, fname, fext] = fileparts(function_name);
 assert(isempty(fext) || fext == '.m', 'No extension or .m extension was expected.)')
@@ -42,6 +38,13 @@ for N=1:size(results,1);
     % Read expected function outputs
     exp_outputs = res.outputs;
 
+    % Read epsilon
+    if isfield(res, 'epsilon')
+        epsilon = res.epsilon;
+    else
+        epsilon = 1e-8;
+    endif
+
     % Generate function outputs for comparison
     num_outputs = numel(exp_outputs);
     candidate_outputs = cell(1, num_outputs);
@@ -64,11 +67,18 @@ for N=1:size(results,1);
         if ~correct_num_outputs
             fprintf('         Call the script like this to get the expected and actual outputs:\n');
             fprintf('         [input, expected, actual] = submit(file_name);\n');
+        else 
+          expected = exp_outputs;
+          actual = candidate_outputs;
+          in = inputs;
         endif
+
+        return;
 
      endif
     endfor
 
+    % TODO: do we need this when we have good result?
     if correct_num_outputs
       expected = exp_outputs;
       actual = candidate_outputs;
