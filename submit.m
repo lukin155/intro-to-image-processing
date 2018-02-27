@@ -20,50 +20,65 @@ old_dir = pwd(); % remember for later
 cd(fpath)
 
 % Files validation
-results_file = sprintf('%s.result.mat', fname);
-assert(2 == exist(fname), 'Cannot find the supplied function.')
-assert(2 == exist(results_file),
-  'a matching .result.mat file expected in the same folder where function is located.')
 
-% Read the info from result spec
-res = load(results_file);
+results = glob(sprintf('%s.*.result.mat', fname));
 
-% Read function inputs
-inputs = res.inputs;
+assert(size(results, 1) > 0, sprintf('a matching %s.<N>.result.mat file not found in the same folder where function is located', fname));
 
-% Read expected function outputs
-exp_outputs = res.outputs;
+total_result = true;
 
-% Generate function outputs for comparison
-num_outputs = numel(exp_outputs);
-candidate_outputs = cell(1, num_outputs);
-[candidate_outputs{:}] = feval(fname, inputs{:});
+for N=1:size(results,1);
+    fprintf('--- Test case %02d ---\n', N);
+    results_file = results(N){1};
 
-assert(num_outputs == numel(candidate_outputs),
-  sprintf('Function returned %d outputs, expected %d.', num_outputs, numel(candidate_outputs)))
+    % Read the info from result spec
+    res = load(results_file);
 
-correct_num_outputs = 3 == nargout;
+    % Read function inputs
+    inputs = res.inputs;
 
-for ii = 1 : num_outputs
-  missmatches = abs(candidate_outputs{ii} - exp_outputs{ii}) > epsilon;
-  s = sum(missmatches(:));
-  if (0 == s)
-    fprintf('Success!\n');
-  else
-    fprintf('Outputs mismatch.\n');
-    if ~correct_num_outputs
-      fprintf('Call the script like this to get the expected and actual outputs:\n');
-      fprintf('[input, expected, actual] = submit(file_name);\n');
+    % Read expected function outputs
+    exp_outputs = res.outputs;
+
+    % Generate function outputs for comparison
+    num_outputs = numel(exp_outputs);
+    candidate_outputs = cell(1, num_outputs);
+    [candidate_outputs{:}] = feval(fname, inputs{:});
+
+    assert(num_outputs == numel(candidate_outputs),
+      sprintf('Function returned %d outputs, expected %d.', num_outputs, numel(candidate_outputs)))
+
+    correct_num_outputs = 3 == nargout;
+
+    for ii = 1 : num_outputs
+      missmatches = abs(candidate_outputs{ii} - exp_outputs{ii}) > epsilon;
+      s = sum(missmatches(:));
+      if (0 == s)
+        fprintf('    Success!\n');
+      else
+        fprintf('    Outputs mismatch.\n');
+        total_result = false;
+
+        if ~correct_num_outputs
+            fprintf('         Call the script like this to get the expected and actual outputs:\n');
+            fprintf('         [input, expected, actual] = submit(file_name);\n');
+        endif
+
+     endif
+    endfor
+
+    if correct_num_outputs
+      expected = exp_outputs;
+      actual = candidate_outputs;
+      in = inputs;
     endif
-  endif
 endfor
 
-if correct_num_outputs
-  expected = exp_outputs;
-  actual = candidate_outputs;
-  in = inputs;
+if total_result
+    fprintf('--- ALL TESTS SUCCESSFUL ---\n');
+else
+    fprintf('--- SOME TESTS FAILED ---\n');
 endif
-
 
 % Return to original dir
 cd(old_dir)
