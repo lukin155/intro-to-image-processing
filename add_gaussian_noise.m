@@ -17,8 +17,8 @@ assert(strcmp(class(in), 'double') || strcmp(class(in), 'single'),
 %% Clip output to [0,1] 
 %% ------- YOUR CODE HERE ------
 
-%% Show some images
-figure, imshow(in)
-figure, imshow(out)
+%% Show some images - uncomment for debugging
+%figure, imshow(in)
+%figure, imshow(out)
 
 endfunction

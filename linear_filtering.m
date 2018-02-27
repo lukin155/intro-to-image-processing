@@ -27,8 +27,8 @@ assert((mod(size(kernel, 1), 2) == 1) && (mod(size(kernel, 2), 2) == 1),
 % image (before padding).
 % NOTE: As a convention, we are performing division (kernel normalization)
 % before summing.
-%% Show some images
-figure('Name', 'Input image'), imshow(in)
-figure('Name', 'Output image'), imshow(out)
+%% Show some images - uncomment for debugging
+%figure('Name', 'Input image'), imshow(in)
+%figure('Name', 'Output image'), imshow(out)
 
 endfunction

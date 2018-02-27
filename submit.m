@@ -27,6 +27,8 @@ assert(size(results, 1) > 0, sprintf('a matching %s.<N>.result.mat file not foun
 
 total_result = true;
 
+fprintf('Testing %s\n', fname);
+
 for N=1:size(results,1);
     fprintf('--- Test case %02d ---\n', N);
     results_file = results(N){1};

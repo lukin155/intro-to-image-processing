@@ -24,9 +24,9 @@ y_in = yuv(:,:,1);
 out(out > 1) = 1;
 out(out < 0) = 0;
 
-%% Show some images
-figure('Name', 'Top edges'), imshow(left_edges)
-figure('Name', 'Input image'), imshow(in)
-figure('Name', 'Egdes'), imshow(out)
+%% Show some images - uncomment for debugging
+%figure('Name', 'Top edges'), imshow(left_edges)
+%figure('Name', 'Input image'), imshow(in)
+%figure('Name', 'Egdes'), imshow(out)
 
 endfunction

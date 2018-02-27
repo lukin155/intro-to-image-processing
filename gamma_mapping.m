@@ -13,15 +13,15 @@ assert(strcmp(class(in), 'double') || strcmp(class(in), 'single'),
 assert(max(in(:)) <= 1.0 && max(in(:)) >= 0.0,
   'Expected input range [0, 1]');
 
-%% Plot the function in range [0, 1]
-xseries = 0:0.01:1;
-plot(xseries, xseries .^ gamma_coeff)
+%% Plot the function in range [0, 1] - uncomment for debugging
+%xseries = 0:0.01:1;
+%plot(xseries, xseries .^ gamma_coeff)
 
 %% Perform gamma mapping 
 %% ------- YOUR CODE HERE ------
 
-%% Show some images
-figure('Name', 'Input image'), imshow(in);
-figure('Name', 'Output image'), imshow(out);
+%% Show some images - uncomment for debugging
+%figure('Name', 'Input image'), imshow(in);
+%figure('Name', 'Output image'), imshow(out);
 
 endfunction

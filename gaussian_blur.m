@@ -22,8 +22,8 @@ assert(length(dim) == 2,
 %% Apply gaussian filter to input luma 
 %% ------- YOUR CODE HERE ------
 
-%% Show some images
-figure('Name', 'Input luma'), imshow(y_in)
-figure('Name', 'Gaussian-filtered luma'), imshow(y_out)
+%% Show some images - uncomment for debugging
+%figure('Name', 'Input luma'), imshow(y_in)
+%figure('Name', 'Gaussian-filtered luma'), imshow(y_out)
 
 endfunction

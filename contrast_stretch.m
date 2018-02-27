@@ -16,10 +16,10 @@ assert(length(out_range) == 2,
 %% Stretch the output image 
 %% ------- YOUR CODE HERE ------
 
-%% Show some images and plots
-figure('Name', 'Original image'), imshow(in)
-figure('Name', 'Output image'), imshow(out)
-figure('Name', 'Original image histogram'), bar(mat_histogram(in))
-figure('Name', 'Output image histogram'), bar(mat_histogram(out))
+%% Show some images and plots - uncomment for debugging
+%figure('Name', 'Original image'), imshow(in)
+%figure('Name', 'Output image'), imshow(out)
+%figure('Name', 'Original image histogram'), bar(mat_histogram(in))
+%figure('Name', 'Output image histogram'), bar(mat_histogram(out))
 
 endfunction

@@ -25,9 +25,9 @@ y_noisy = imnoise(y_in, 'salt & pepper');
 
 % Remember that the output image should have the same dimensions as the input
 % image (before padding).
-%% Show some images
-figure('Name', 'Input luma'), imshow(y_in)
-figure('Name', 'Noisy luma'), imshow(y_noisy)
-figure('Name', 'De-noised luma'), imshow(y_out)
+%% Show some images - uncomment for debugging
+%figure('Name', 'Input luma'), imshow(y_in)
+%figure('Name', 'Noisy luma'), imshow(y_noisy)
+%figure('Name', 'De-noised luma'), imshow(y_out)
 
 endfunction

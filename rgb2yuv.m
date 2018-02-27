@@ -28,9 +28,10 @@ Y = 0.299 * R + 0.587 * G + 0.114 * B;
 %% Concat output planes
 yuv = cat(3, Y, U, V);
 
-% Display the components
-figure('Name', 'Y-component'), imshow(Y)
-figure('Name', 'U-component'), imshow(U + 0.5)
-figure('Name', 'V-component'), imshow(V + 0.5)
+% Display the components - uncomment for debugging
+
+%figure('Name', 'Y-component'), imshow(Y)
+%figure('Name', 'U-component'), imshow(U + 0.5)
+%figure('Name', 'V-component'), imshow(V + 0.5)
 
 endfunction

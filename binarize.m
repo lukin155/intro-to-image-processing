@@ -16,8 +16,8 @@ assert(max(in(:)) <= 1.0 && max(in(:)) >= 0.0,
 %% Binarize image 
 %% ------- YOUR CODE HERE ------
 
-%% Show some images
-figure('Name', 'Input image'), imshow(in)
-figure('Name', 'Binarized image'), imshow(out)
+%% Show some images - uncomment for debugging
+%figure('Name', 'Input image'), imshow(in)
+%figure('Name', 'Binarized image'), imshow(out)
 
 endfunction

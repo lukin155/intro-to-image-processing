@@ -24,9 +24,9 @@ V = yuv(:,:,3);
 %% Concat output planes
 rgb = cat(3, R, G, B);
 
-% Display the components
-figure('Name', 'R-component'), imshow(R)
-figure('Name', 'G-component'), imshow(G)
-figure('Name', 'B-component'), imshow(B)
+% Display the components - uncomment for debugging
+%figure('Name', 'R-component'), imshow(R)
+%figure('Name', 'G-component'), imshow(G)
+%figure('Name', 'B-component'), imshow(B)
 
 endfunction
