@@ -25,6 +25,8 @@ total_result = true;
 
 fprintf('Testing %s\n', fname);
 
+try
+
 for N=1:size(results,1);
     fprintf('--- Test case %02d ---\n', N);
     results_file = results(N){1};
@@ -78,6 +80,7 @@ for N=1:size(results,1);
      endif
     endfor
 
+
     % TODO: do we need this when we have good result?
     if correct_num_outputs
       expected = exp_outputs;
@@ -85,6 +88,12 @@ for N=1:size(results,1);
       in = inputs;
     endif
 endfor
+
+catch 
+  total_result = false;
+  printf("Exception thrown: %s\n", lasterror.message);
+  rethrow lasterror
+end_try_catch
 
 
 if total_result

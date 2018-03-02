@@ -10,4 +10,7 @@ function outImage = warp1 (image, h)
 %% ------- YOUR CODE HERE ------
 
 % koristeci matricu homografije h
+    endfor
+  endfor
+
 endfunction
